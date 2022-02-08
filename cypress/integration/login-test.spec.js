@@ -129,7 +129,7 @@ describe(`Verify various user interaction on the Login Page (positive/negative).
 
     it (`LP16-Verify that the validation message gets displayed in case the user leaves the username field as blank and that the message does not indicate which is wrong or empty.`, () => {
 
-        enterLoginDetails("user", "blabla")
+        enterLoginDetails("user", "")
 
         cy.get('#login-form-submit').click()
 
@@ -139,7 +139,7 @@ describe(`Verify various user interaction on the Login Page (positive/negative).
 
     it (`LP17-Verify that the validation message gets displayed in case the user leaves the password field as blank and that the message does not indicate which is wrong or empty`, () => {
 
-        enterLoginDetails("bla", "password")
+        enterLoginDetails("", "password")
 
         cy.get('#login-form-submit').click()
 
@@ -147,17 +147,19 @@ describe(`Verify various user interaction on the Login Page (positive/negative).
         cy.get('#login-error-msg').should('have.text', 'Invalid username and/or password')
     })
 
-
-
-
-    function enterLoginDetails(username, password) {
-        cy.get('#username-field')
+    function enterLoginDetails(username, thePassword) {
+        //have to do this check as .type does not take empty strings
+        if (! username == '') {
+            cy.get('#username-field')
             .type(username)
             .should('have.value', username)
-
-        cy.get('#password-field')
-            .type(password)
-            .should('have.value', password)
+        } 
+        
+        if (! thePassword == '') {
+            cy.get('#password-field')
+            .type(thePassword)
+            .should('have.value', thePassword)
+        } 
     }
 
 })
