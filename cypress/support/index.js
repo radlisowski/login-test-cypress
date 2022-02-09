@@ -1,4 +1,7 @@
 require('cypress-plugin-tab')
+
+import '@applitools/eyes-cypress/commands'
+
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.

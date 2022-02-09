@@ -12,6 +12,7 @@
     "cypress": "^9.4.1"
   },
   "devDependencies": {
+    "@applitools/eyes-cypress": "^3.23.7",
     "cypress-plugin-tab": "^1.0.5"
   }
 }
