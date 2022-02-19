@@ -19,11 +19,25 @@ describe(`Verify that all the labels and controls including text-boxes, buttons,
     //********tests-cases*********
 
     it(`LP01-Verifying visibility of the page objects`, () => {
+        
+         //applitools eyes test
         cy.eyesCheckWindow({
             tag: "LP01-Verifying visibility of the elements on the page",
             target: 'window',
             fully: true
         });
+
+        //or
+        //cypres native tests
+        cy.get('.login-form .h5').should('have.text', 'Login')
+        
+        cy.get('#username-field').invoke('attr', 'placeholder')
+            .should('contain', 'username')
+        
+        cy.get('#password-field').invoke('attr', 'placeholder')
+            .should('contain', 'password')
+
+        cy.get('#signin-button').should('have.name', 'Sign in')
     })
 
     it(`LP02-Verifying Username text-box can take text input`, () => {
