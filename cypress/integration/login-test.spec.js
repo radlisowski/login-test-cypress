@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="@applitools/eyes-cypress" />
 
-describe(`Verify that all the labels and controls including text-boxes, buttons, and links are present on the Login page and can be interacted with.`, () => {
+describe(`The user is able to see the labels and controls including text-boxes, buttons and labels on the Login Page and can interacted with.`, () => {
 
     beforeEach(() => {
         cy.visit('https://radlisowski.github.io/login.html')
@@ -18,7 +18,7 @@ describe(`Verify that all the labels and controls including text-boxes, buttons,
 
     //********tests-cases*********
 
-    it(`LP01-Verifying visibility of the page objects`, () => {
+    it.only(`LP01-Verifying visibility of the page objects`, () => {
         
          //applitools eyes test
         cy.eyesCheckWindow({
@@ -29,15 +29,17 @@ describe(`Verify that all the labels and controls including text-boxes, buttons,
 
         //or
         //cypres native tests
-        cy.get('.login-form .h5').should('have.text', 'Login')
         
-        cy.get('#username-field').invoke('attr', 'placeholder')
-            .should('contain', 'username')
+        // cy.get('h5').invoke('text')
+        //     .should('contain', 'Login')
         
-        cy.get('#password-field').invoke('attr', 'placeholder')
-            .should('contain', 'password')
+        // cy.get('#username-field').invoke('attr', 'placeholder')
+        //     .should('contain', 'username')
+        
+        // cy.get('#password-field').invoke('attr', 'placeholder')
+        //     .should('contain', 'password')
 
-        cy.get('#signin-button').should('have.name', 'Sign in')
+        // cy.get('#signin-button').should('contain', 'Sign in')
     })
 
     it(`LP02-Verifying Username text-box can take text input`, () => {
@@ -59,7 +61,7 @@ describe(`Verify that all the labels and controls including text-boxes, buttons,
     })
 })
 
-describe(`Verify various user interaction on the Login Page (positive/negative).`, () => {
+describe(`The user can interact with the UI via varius actions (positive/negative)`, () => {
 
     beforeEach(() => {
         cy.visit('https://radlisowski.github.io/login.html')
@@ -137,7 +139,7 @@ describe(`Verify various user interaction on the Login Page (positive/negative).
         cy.get('#error-button').should('have.text', 'Wrong Username or Password')
     })
 
-    it(`LP15-Verify that the validation message gets displayed in case the user leaves the password field as blank and that the message does not indicate which is wrong or empty.`, () => {
+    it(`LP14-Verify that the validation message gets displayed in case the user leaves the password field as blank and that the message does not indicate which is wrong or empty.`, () => {
 
         enterLoginDetails("", "password")
         cy.get('#signin-button').click()
