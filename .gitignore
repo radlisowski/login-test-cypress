@@ -1,2 +1,5 @@
 /node_modules
-/applitools.config.js
+/cypress/download
+/fixtures
+/plugins
+/support
