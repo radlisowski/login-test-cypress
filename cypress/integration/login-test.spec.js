@@ -74,36 +74,27 @@ describe(`The user can interact with the UI via varius actions (positive/negativ
         cy.focused().should('have.id', 'username-field');
     })
 
-    it(`LP06-Verify that the user is able to navigate to "Username" field by pressing "TAB" key on the keyboard.`, () => {
+    it(`LP06-Verify that the user is able to navigate to "Password" field by pressing "TAB" key on the keyboard.`, () => {
         cy.get('body')
-            .tab()
-
-        cy.focused().should('have.id', 'username-field')
-    })
-
-    it(`LP07-Verify that the user is able to navigate to "Password" field by pressing "TAB" key on the keyboard.`, () => {
-        cy.get('body')
-            .tab()
             .tab()
 
         cy.focused().should('have.id', 'password-field')
     })
 
-    it(`LP08-Verify that the user is able to navigate to "Login" button by pressing "TAB" key on the keyboard.`, () => {
+    it(`LP07-Verify that the user is able to navigate to "Login" button by pressing "TAB" key on the keyboard.`, () => {
         cy.get('body')
-            .tab()
             .tab()
             .tab()
 
         cy.focused().should('have.id', 'signin-button')
     })
 
-    it(`LP09-Verifying that  the password as it is being typed in is being hashed and can't be copied`, () => {
+    it(`LP08-Verifying that  the password as it is being typed in is being hashed and can't be copied`, () => {
         cy.get('#password-field').invoke('attr', 'type')
             .should('contain', 'password')
     })
 
-    it(`LP10-Verify that the user is able to login by entering valid credentials and clicking on the ‘Login’ button.`, () => {
+    it(`LP09-Verify that the user is able to login by entering valid credentials and clicking on the ‘Login’ button.`, () => {
 
         enterLoginDetails("test", "test")
 
@@ -112,7 +103,7 @@ describe(`The user can interact with the UI via varius actions (positive/negativ
         cy.get('#success-button').should('have.text', 'Cool Beans!')
     })
 
-    it(`LP11-Verify that the user is able to login by entering valid credentials and pressing Enter key.`, () => {
+    it(`LP10-Verify that the user is able to login by entering valid credentials and pressing Enter key.`, () => {
 
         enterLoginDetails("test", "test")
 
@@ -121,7 +112,7 @@ describe(`The user can interact with the UI via varius actions (positive/negativ
         cy.get('#success-button').should('have.text', 'Cool Beans!')
     })
 
-    it(`LP12-Verify that the user is NOT able to login by entering INVALID credentials and clicking on the ‘Login’ button.`, () => {
+    it(`LP11-Verify that the user is NOT able to login by entering INVALID credentials and clicking on the ‘Login’ button.`, () => {
 
         enterLoginDetails("bla", "blabla")
 
@@ -130,7 +121,7 @@ describe(`The user can interact with the UI via varius actions (positive/negativ
         cy.get('#error-button').should('have.text', 'Wrong Username or Password')
     })
 
-    it(`LP13-Verify that the validation message gets displayed in case the user leaves the username field as blank and that the message does not indicate which is wrong or empty.`, () => {
+    it(`LP12-Verify that the validation message gets displayed in case the user leaves the username field as blank and that the message does not indicate which is wrong or empty.`, () => {
 
         enterLoginDetails("", "test")
 
@@ -139,7 +130,7 @@ describe(`The user can interact with the UI via varius actions (positive/negativ
         cy.get('#error-button').should('have.text', 'Wrong Username or Password')
     })
 
-    it(`LP14-Verify that the validation message gets displayed in case the user leaves the password field as blank and that the message does not indicate which is wrong or empty.`, () => {
+    it(`LP13-Verify that the validation message gets displayed in case the user leaves the password field as blank and that the message does not indicate which is wrong or empty.`, () => {
 
         enterLoginDetails("", "password")
         cy.get('#signin-button').click()
