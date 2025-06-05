@@ -54,7 +54,7 @@ describe('Projects Page Objects Validation Tests', () => {
         projectsPage.validateNavigationButtons();
     });
 
-    it.only('should display correct number of project cards with proper titles', () => {
+    it('should display correct number of project cards with proper titles', () => {
         projectsPage.validateProjectCardsNumbersAndTitles();
     });
 });
