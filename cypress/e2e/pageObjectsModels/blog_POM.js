@@ -35,6 +35,7 @@ export class Blog_Page {
             ' Python API Automation',
             ' CI/CD Pipeline Implementation',
             ' Cypress Testing Framework',
+            ' Performance Testing with K6',
         ];
         //Validates the number of blogs and their titles
         cy.get('.project-list a').should('have.length', expectedTitles.length);

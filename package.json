@@ -1,7 +1,7 @@
 {
   "name": "login-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a little exercise I did to start learning **Cypress** instead of watching a bunch of tutorials.   I have created a small **login page** (can be found on my profile) and then proceeded to write **test cases** for it and automate them using Cypress. This happened 3 years ago so I am currently modernizing the tests and making them e2e, and not only the login page. ### 🔍 Features - Using Page Object Model.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,17 @@
   "license": "ISC",
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.23.7",
-    "cypress": "^14.4.0",
+    "cypress": "^14.5.0",
     "cypress-plugin-tab": "^1.0.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radlisowski/login-test-cypress.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/radlisowski/login-test-cypress/issues"
+  },
+  "homepage": "https://github.com/radlisowski/login-test-cypress#readme"
 }
