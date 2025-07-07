@@ -10,7 +10,7 @@ const blogPage = new Blog_Page();
 const aboutPage = new About_Page();
 
 // *** login page ***
-describe(`The user is able to see the labels and controls including text-boxes, buttons and labels on the Login
+describe.only(`The user is able to see the labels and controls including text-boxes, buttons and labels on the Login
 Page.`, function () {
 
     beforeEach(function () {
@@ -25,7 +25,7 @@ Page.`, function () {
 })
 
 // *** projects page ***
-describe('Projects Page Objects Validation Tests', function () {
+describe.only('Projects Page Objects Validation Tests', function () {
 
     beforeEach(() => {
         projectsPage.navigate()
@@ -46,7 +46,7 @@ describe('Projects Page Objects Validation Tests', function () {
 });
 
 // *** blog page ***
-describe('Blog Page Objects Validation Tests', function () {
+describe.only('Blog Page Objects Validation Tests', function () {
 
     beforeEach(() => {
         blogPage.navigate()
@@ -68,14 +68,14 @@ describe('Blog Page Objects Validation Tests', function () {
 });
 
 // *** about page ***
-describe('About Page Objects Validation Tests', function () {
+describe.only('About Page Objects Validation Tests', function () {
 
     beforeEach(() => {
         aboutPage.navigate()
     });
 
     //********tests-cases*********
-    it('About Page should have correct page title', function () {
+    it.only('About Page should have correct page title', function () {
         aboutPage.validatePageTitle();
     });
 
