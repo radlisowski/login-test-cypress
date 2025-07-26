@@ -8,6 +8,7 @@ export class About_Page {
             aboutButton: () => cy.get('nav.navbar a').contains('about'),
             githubButton: () => cy.get('nav.footer a').contains('github'),
             linkedinButton: () => cy.get('nav.footer a').contains('linkedin'),
+            cvButton: () => cy.get('nav.footer a').contains('cv'),
             headingText: () => cy.get('.about h5'),
         };
         this.buttons = Object.values(this.selector); // Stores all button selectors in an array
